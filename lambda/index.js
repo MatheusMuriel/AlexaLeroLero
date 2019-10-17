@@ -171,7 +171,6 @@ const LeroLeroIntentHandler = {
         var saida = lerolero(quantFrases);
         return handlerInput.responseBuilder
             .speak(saida)
-            .reprompt(saida)
             .getResponse();
     }
 };
