@@ -3,7 +3,7 @@
 // session persistence, api calls, and more.
 const Alexa = require('ask-sdk-core');
 
-var tab0 = new Array(
+var tab0 = [
 			"Caros amigos, ",
 			"Por outro lado, ",
 			"Assim mesmo, ",
@@ -34,9 +34,9 @@ var tab0 = new Array(
 			"Desta maneira, ",
 			"O cuidado em identificar pontos críticos n",
 			"A certificação de metodologias que nos auxiliam a lidar com "
-		);
+		];
 
-var tab1 = new Array(
+var tab1 = [
 			"a execução dos pontos do programa ",
 			"a complexidade dos estudos efetuados ",
 			"a contínua expansão de nossa atividade ",
@@ -67,9 +67,9 @@ var tab1 = new Array(
 			"o entendimento das metas propostas ",
 			"o consenso sobre a necessidade de qualificação ",
 			"o julgamento imparcial das eventualidades "
-		);
+		];
 
-var tab2 = new Array(
+var tab2 = [
 			"nos obriga à análise ",
 			"cumpre um papel essencial na formulação ",
 			"exige a precisão e a definição ",
@@ -100,9 +100,9 @@ var tab2 = new Array(
 			"estende o alcance e a importância ",
 			"deve passar por modificações independentemente ",
 			"afeta positivamente a correta previsão "
-		);
+		];
 
-var tab3 = new Array(
+var tab3 = [
 			"das condições financeiras e administrativas exigidas.",
 			"das diretrizes de desenvolvimento para o futuro.",
 			"do sistema de participação geral.",
@@ -133,7 +133,21 @@ var tab3 = new Array(
 			"do retorno esperado a longo prazo.",
 			"do investimento em reciclagem técnica.",
 			"do remanejamento dos quadros funcionais."
-		);
+		];
+
+// Função que gera o lero lero
+function lerolero(quantidade){
+	var textoSaida = "";
+	for (var i = 0; i < quantidade; i++){
+		var nM = Math.random(); //Numero Magico
+		let p0 = tab0[Math.floor(nM * tab0.length)];
+		let p1 = tab1[Math.floor(nM * tab1.length)];
+		let p2 = tab2[Math.floor(nM * tab2.length)];
+		let p3 = tab3[Math.floor(nM * tab3.length)];
+		textoSaida = textoSaida.concat(p0, p1, p2, p3, " ");
+	}
+	return textoSaida;
+}		
 
 const LaunchRequestHandler = {
     canHandle(handlerInput) {
@@ -147,19 +161,6 @@ const LaunchRequestHandler = {
             .getResponse();
     }
 };
-
-function lerolero(quantidade){
-	var textoSaida = "";
-	for (var i = 0; i < quantidade; i++){
-        var nM = Math.random(); //Numero Magico
-        let p0 = tab0[Math.floor(nM * tab0.length)];
-		let p1 = tab1[Math.floor(nM * tab1.length)];
-		let p2 = tab2[Math.floor(nM * tab2.length)];
-		let p3 = tab3[Math.floor(nM * tab3.length)];
-		textoSaida = textoSaida.concat(p0, p1, p2, p3, " ");
-	}
-    return textoSaida;
-}
 
 const LeroLeroIntentHandler = {
     canHandle(handlerInput) {
@@ -175,7 +176,6 @@ const LeroLeroIntentHandler = {
     }
 };
 
-
 const HelpIntentHandler = {
     canHandle(handlerInput) {
         return handlerInput.requestEnvelope.request.type === 'IntentRequest'
@@ -190,6 +190,7 @@ const HelpIntentHandler = {
             .getResponse();
     }
 };
+
 const CancelAndStopIntentHandler = {
     canHandle(handlerInput) {
         return handlerInput.requestEnvelope.request.type === 'IntentRequest'
@@ -203,6 +204,7 @@ const CancelAndStopIntentHandler = {
             .getResponse();
     }
 };
+
 const SessionEndedRequestHandler = {
     canHandle(handlerInput) {
         return handlerInput.requestEnvelope.request.type === 'SessionEndedRequest';
@@ -260,7 +262,7 @@ exports.handler = Alexa.SkillBuilders.custom()
         HelpIntentHandler,
         CancelAndStopIntentHandler,
         SessionEndedRequestHandler,
-        IntentReflectorHandler) // make sure IntentReflectorHandler is last so it doesn't override your custom intent handlers
+        IntentReflectorHandler)
     .addErrorHandlers(
         ErrorHandler)
     .lambda();
