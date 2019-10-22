@@ -1,0 +1,10 @@
+Não usar acentos ou virgulas
+
+User: "alexa abra o gerador de lero lero e gere três de frases"
+Skill: "Frase..."
+
+
+User: "Alexa abra o gerador de lero lero"
+Skill: "Bem vindo ao fabuloso gerador de lero lero. Posso gerar qualquer quantidade de texto vazio e difuso. Quantas frases você deseja?"
+User: "me diga um lero lero"
+Skill: "Frase..."
