@@ -1,15 +1,16 @@
 # Alexa Lero Lero
 Skill geradora de Lero Lero para a assistente virtual Amazon Alexa
 
-*Skill ainda em processo de certificação*
-
->O Fabuloso Gerador de Lero Lero é capaz de gerar qualquer quantidade de texto vazio e prolixo.
->
->Baseado no fabuloso gerador de lero-lero versão JavaScript (c)2001-2004 by Padre Levedo.
->
->Lembre-se: aparência é tudo, conteúdo é nada.
-
+*Skill ainda em processo de certificação*  
 Esse skill não utiliza AWS Lambda
+
+O Fabuloso Gerador de Lero Lero é capaz de gerar qualquer quantidade de texto vazio e prolixo.
+
+Baseado no fabuloso gerador de lero-lero versão JavaScript (c)2001-2004 by Padre Levedo.
+
+Lembre-se: aparência é tudo, conteúdo é nada.
+
+
 
 ## Exemplo de utilização
 **Usuario**: *"Alexa, abra o gerador de lero lero e gere três de frases."*
